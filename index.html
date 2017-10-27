@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="shortcut icon" href="">
+		<title>This is the page where users can create a new poll.</title>
+		
+		
+		<script type="text/javascript">
+		function defaults(){
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("pollContainer");
+            for (var i=0;i<2;i++){
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Member " + (i+1)));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "member" + i;
+                container.appendChild(input);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+            }
+		}
+	</script>
+	</head>
+
+	<header>
+		<p>fcc voter app</p>
+		<a class="menu" href="/profile">Profile</a>
+		<p>|</p>
+		<a class="menu" href="/logout">Logout</a>
+	</header>
+
+	<body>
+		<div class="container">
+			<br />
+			<p class="clementine-text">Create New Poll</p>
+		</div>
+	
+	
+		<div class="pollContainer" >
+
+			<br />
+			<form>
+  					<br>
+  					<input type="text" value="enter a dummy username" name="username"  id="username">
+  					<br>
+  					<input type="text" value="enter a dummy password" name="password"  id="password">
+  					<br>
+  					<input type="text" value="enter a dummy pollname" name="pollname"  id="pollname">
+				</form>
+			<input type="text" id="member1" name="member1" value="Option 1" class="pInput"><br />
+			<input type="text" id="member2" name="member1" value="Option 2"><br />
+			<!--<input type="text" id="member" name="member" value=""><br /> -->
+			<div id="container"/>
+		</div>
+		
+    <button class="btn btn-addOpt">Add Option</button>
+	
+		<div class="container">
+			<br />
+			<div class="btn-container">
+				<button type="submit" class="btn btn-test">test</button> 
+			</div>
+		</div>
+
+	</body>
+
+</html>
