@@ -1,4 +1,5 @@
-'use strict';
+// this code causes the 'TypeError: app.route is not a function' error
+//'use strict';
 
 //var path = process.cwd();
 
@@ -14,7 +15,8 @@
 
 //};
 
-
+// this code DOES NOT cause the 'TypeError: app.route is not a function' error HOWEVER
+// the server cannot find the routes folder now
  'use strict';
  var path = process.cwd();
 
@@ -30,7 +32,7 @@
  };
  
  
- 
+ // this code causes the 'TypeError: app.route is not a function' error
 //  'use strict';
 //var express = require('express');
 //var app = express();

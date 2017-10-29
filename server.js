@@ -11,7 +11,8 @@ var session = require('express-session');
 var path = require('path');
 var routes = require('./app/routes/index.js');
 var mongoose = require('mongoose');
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
+//var port = 5000;
 var mongodb=require("mongodb")
 var MongoClient = mongodb.MongoClient;
 
@@ -24,7 +25,9 @@ app.use('/public', express.static(process.cwd() + '/public'));
 
 routes(app);
 
-var port = process.env.PORT || 8080;
+app.on('listening',function(){
+    console.log('ok, server is running');
+});
 
 app.listen(port,  function () {
 	console.log('Node.js listening on port ' + port + '...');
