@@ -9,24 +9,22 @@ var express = require('express');
 var app = express();
 var session = require('express-session');
 var path = require('path');
+var routes = require('./app/routes/index.js');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 8080;
 var mongodb=require("mongodb")
 var MongoClient = mongodb.MongoClient;
-var routes = require('./app/routes/index.js');
+
+
+var app = express();
 
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
 
 
-
-app.get('/',function(req, res){
-  res.sendfile(path.join(__dirname+'/index.html'));
-});
+routes(app);
 
 var port = process.env.PORT || 8080;
-
-routes(app);
 
 app.listen(port,  function () {
 	console.log('Node.js listening on port ' + port + '...');
